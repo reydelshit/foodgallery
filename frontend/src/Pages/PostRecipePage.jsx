@@ -26,7 +26,9 @@ const PostRecipePage = () => {
                     timestamp: timestamp
                 }
             }, { withCredentials: true });
-            setRecipeData(response.data);
+            // setRecipeData(response.data);
+            setRecipeData([response.data]);
+            
             setLoading(false);
         } catch (error) {
             console.log(error.message);
@@ -206,7 +208,9 @@ const PostRecipePage = () => {
                                 </div>
                             </div>
                         ))
-                        ) : (recipeData?.length === 0 && (<div><h1 className='font-bold text-4xl text-yellow-900'>No Recipe Posted.</h1></div>))
+                        ) : (
+                            <div><h1 className='font-bold text-4xl text-yellow-900'>No Recipe Posted.</h1></div>
+                            )
                     )}
 
                 </div>
